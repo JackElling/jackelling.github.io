@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Your Name] — Home</title>
+<meta name="description" content="Personal site of [Your Name], incoming first-year at UC Berkeley.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  // Apply saved theme before paint to avoid a flash of the wrong theme
+  (function(){var t=localStorage.getItem('site-theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}})();
+</script>
+</head>
+<body>
+<div class="shell">
+
+  <aside class="sidebar">
+    <div class="mark">[Your Name]</div>
+    <p class="tagline">Incoming first-year, UC Berkeley</p>
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="college.html">College</a></li>
+        <li><a href="hobbies.html">Hobbies &amp; Writing</a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-footer">
+      <button type="button" class="lamp-toggle" data-lamp-toggle>Turn the lamp off</button>
+    </div>
+  </aside>
+
+  <main>
+    <div class="content">
+      <p class="eyebrow">Overview</p>
+      <h1>Hi — I'm [Your Name].</h1>
+      <p>
+        I'm an incoming first-year at UC Berkeley, starting this fall.
+        This little corner of the internet is where I'm keeping track of
+        what I'm up to: school, the things I collect, and some writing.
+        [Add a sentence or two here about who you are, where you're from,
+        or what you're into — this is the first thing people will read.]
+      </p>
+
+      <dl class="facts-grid">
+        <div class="fact">
+          <dt>Studying at</dt>
+          <dd>UC Berkeley</dd>
+        </div>
+        <div class="fact">
+          <dt>Class of</dt>
+          <dd>[2030]</dd>
+        </div>
+        <div class="fact">
+          <dt>Living in</dt>
+          <dd>Foothill</dd>
+        </div>
+        <div class="fact">
+          <dt>Probably thinking about</dt>
+          <dd>[intended major]</dd>
+        </div>
+      </dl>
+
+      <h2>A few things about me</h2>
+      <p>
+        I collect small, well-made things — fountain pens, watches,
+        cologne, tea, and the odd interesting object for my desk. I fence,
+        I'm into maps, and I run a long-running Dungeons &amp; Dragons
+        campaign. More on all of that on the
+        <a href="hobbies.html">hobbies page</a>.
+      </p>
+
+      <h2>Find me elsewhere</h2>
+      <p>
+        [Email] · [GitHub] · [Instagram, LinkedIn, or wherever else you'd
+        like people to find you — replace this line with real links.]
+      </p>
+    </div>
+  </main>
+
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
