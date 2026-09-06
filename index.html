@@ -13,23 +13,29 @@
 </script>
 </head>
 <body>
-<div class="page-frame">
 
-  <header class="atlas-header">
+<div class="ocean-scene" aria-hidden="true">
+  <div class="ocean-layer ocean-layer--graticule" data-speed="0.02"></div>
+  <div class="ocean-layer ocean-layer--waves-1" data-speed="0.06"></div>
+  <div class="ocean-layer ocean-layer--waves-2" data-speed="0.1"></div>
+  <div class="ocean-layer ocean-layer--waves-3" data-speed="0.14"></div>
+  <span class="geo-label geo-label--tl">122°16&prime; W</span>
+  <span class="geo-label geo-label--tr">37°52&prime; N</span>
+  <span class="geo-label geo-label--bl">Berkeley, California</span>
+</div>
+
+<main class="archipelago">
+
+  <div class="isle-block isle-block--1 isle-block--hero">
     <p class="small-caps-label">An Atlas, Kept By</p>
     <h1>[Your Name]</h1>
     <p class="tagline">Incoming first-year, University of California, Berkeley — a single room in Foothill.</p>
-  </header>
+  </div>
 
   <div class="map-wrap">
     <svg viewBox="0 0 900 560" role="img" aria-labelledby="mapTitle mapDesc">
       <title id="mapTitle">A map of this site</title>
       <desc id="mapDesc">An illustrated map with two isles — College and Hobbies &amp; Writing — each linking to a page.</desc>
-
-      <!-- sea -->
-      <rect x="0" y="0" width="900" height="560" fill="var(--sea)"></rect>
-      <path d="M0,120 Q150,140 300,115 T600,125 T900,110" stroke="var(--sea-deep)" stroke-width="2" fill="none" opacity=".5"></path>
-      <path d="M0,430 Q180,455 360,428 T720,440 T900,420" stroke="var(--sea-deep)" stroke-width="2" fill="none" opacity=".5"></path>
 
       <!-- route between isles -->
       <path class="route-line" d="M345,255 Q450,180 560,300"></path>
@@ -47,4 +53,49 @@
 
       <!-- Hobbies & Writing isle -->
       <a href="hobbies.html" class="isle-link" aria-label="Go to the Hobbies and Writing page">
-        <path class="isle-shape"
+        <path class="isle-shape" d="M560,300 C575,253 622,232 672,238 C718,227 758,253 762,288 C773,318 747,346 706,352 C665,361 613,356 583,335 C563,320 554,310 560,300 Z"></path>
+        <g class="isle-icon" transform="translate(662,275)">
+          <path d="M-16,16 C-16,-4 4,-20 20,-18 C10,-14 0,-2 -2,14 Z" fill="none" stroke="var(--oxblood)" stroke-width="2.5" stroke-linejoin="round"></path>
+          <line x1="-2" y1="14" x2="-10" y2="24" stroke="var(--oxblood)" stroke-width="2.5" stroke-linecap="round"></line>
+        </g>
+        <text class="isle-label" x="662" y="323" text-anchor="middle">Hobbies &amp; Writing</text>
+      </a>
+
+      <!-- compass rose -->
+      <g class="compass" transform="translate(800,460)">
+        <circle cx="0" cy="0" r="50" fill="none" stroke-width="1.5"></circle>
+        <circle cx="0" cy="0" r="34" fill="none" stroke-width="1"></circle>
+        <line x1="0" y1="-50" x2="0" y2="50" stroke-width="1"></line>
+        <line x1="-50" y1="0" x2="50" y2="0" stroke-width="1"></line>
+        <polygon class="needle" points="0,-34 8,0 0,34 -8,0"></polygon>
+        <text x="0" y="-38" text-anchor="middle" font-size="13">N</text>
+        <text x="0" y="48" text-anchor="middle" font-size="13">S</text>
+        <text x="42" y="4" text-anchor="middle" font-size="13">E</text>
+        <text x="-42" y="4" text-anchor="middle" font-size="13">W</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="map-hint">Click an isle to make your way there.</p>
+
+  <div class="isle-block isle-block--2">
+    <h2>Key</h2>
+    <dl class="key-list">
+      <dt>Studying at</dt><dd>UC Berkeley</dd>
+      <dt>Class of</dt><dd>[2030]</dd>
+      <dt>Living in</dt><dd>Foothill</dd>
+      <dt>Charted for</dt><dd>[intended major]</dd>
+      <dt>Correspondence</dt><dd>[Email] · [GitHub] · [wherever else]</dd>
+    </dl>
+  </div>
+
+  <p class="footer-note">
+    Drawn &amp; kept, [Year].<br>
+    <button type="button" class="lamp-toggle" data-lamp-toggle>Trim the lamp</button>
+  </p>
+
+</main>
+
+<script src="js/script.js"></script>
+</body>
+</html>

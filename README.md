@@ -1,5 +1,7 @@
 # Personal site
 
+An antique-map / atlas theme — the home page is an illustrated map you click through to the other pages.
+
 A small personal website built with plain HTML, CSS, and JavaScript —
 no build tools or frameworks required. Hosted for free on GitHub Pages.
 

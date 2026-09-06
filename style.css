@@ -1,0 +1,417 @@
+/* ============================================
+   Personal site — antique atlas / archipelago theme
+   ============================================ */
+
+:root {
+  --parchment: #e4d5ac;
+  --parchment-deep: #d3bd85;
+  --ink: #2b2013;
+  --ink-soft: #5c4d38;
+  --oxblood: #950000;
+  --oxblood-soft: #7a1f1f;
+  --gold: #a8791a;
+  --gold-bright: #c9971f;
+  --sea: #3e5c54;
+  --sea-deep: #23362f;
+  --rule: #a9895a;
+  --isle-shadow: rgba(0,0,0,.4);
+  --maxw: 620px;
+}
+
+html[data-theme="dark"] {
+  --parchment: #1c1712;
+  --parchment-deep: #140f0b;
+  --ink: #ecdfc0;
+  --ink-soft: #b8a67f;
+  --oxblood: #c23b3b;
+  --oxblood-soft: #e0605f;
+  --gold: #d4af37;
+  --gold-bright: #e8c766;
+  --sea: #1c2f2a;
+  --sea-deep: #0f1c18;
+  --rule: #5c4d38;
+  --isle-shadow: rgba(0,0,0,.6);
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--sea-deep);
+  color: var(--ink);
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 19px;
+  line-height: 1.6;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+h1, h2 {
+  font-family: "Mrs Saint Delafield", cursive;
+  font-weight: 400;
+  color: var(--oxblood);
+  margin: 0 0 .25rem;
+  line-height: 1.15;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 1.9rem; margin-top: 1.5rem; }
+
+h3 {
+  font-family: "EB Garamond", Georgia, serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--ink);
+  margin: 0 0 .4rem;
+}
+
+p { margin: 0 0 1.1rem; max-width: var(--maxw); }
+
+a { color: var(--oxblood-soft); }
+a:hover { color: var(--gold-bright); }
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 2px;
+}
+
+.small-caps-label {
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  font-size: .72rem;
+  letter-spacing: .12em;
+  color: var(--gold);
+}
+
+/* ============================================
+   Ocean scene — fixed, parallaxed background
+   ============================================ */
+
+.ocean-scene {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 0%, var(--sea), var(--sea-deep) 85%);
+}
+
+.ocean-layer {
+  position: absolute;
+  left: -15%;
+  width: 130%;
+  will-change: transform;
+}
+
+.ocean-layer--graticule {
+  top: -25%;
+  height: 150%;
+  background-image:
+    repeating-linear-gradient(to bottom, rgba(201,151,31,.22) 0 1px, transparent 1px 130px),
+    repeating-linear-gradient(to right, rgba(201,151,31,.22) 0 1px, transparent 1px 170px);
+}
+
+.ocean-layer--waves-1 {
+  top: 8%;
+  height: 60px;
+  opacity: .5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='60' viewBox='0 0 400 60'%3E%3Cpath d='M0,30 Q100,8 200,30 T400,30' stroke='%23ffffff' stroke-opacity='0.5' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 400px 60px;
+}
+
+.ocean-layer--waves-2 {
+  top: 34%;
+  height: 90px;
+  opacity: .35;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='90' viewBox='0 0 560 90'%3E%3Cpath d='M0,45 Q140,15 280,45 T560,45' stroke='%23ffffff' stroke-opacity='0.5' stroke-width='2.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 560px 90px;
+}
+
+.ocean-layer--waves-3 {
+  top: 64%;
+  height: 120px;
+  opacity: .25;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='120' viewBox='0 0 700 120'%3E%3Cpath d='M0,60 Q175,20 350,60 T700,60' stroke='%23ffffff' stroke-opacity='0.5' stroke-width='3' fill='none'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 700px 120px;
+}
+
+.geo-label {
+  position: absolute;
+  font-family: "Cinzel", serif;
+  font-size: .68rem;
+  letter-spacing: .1em;
+  color: rgba(201,151,31,.55);
+  white-space: nowrap;
+}
+
+.geo-label--tl { top: 14px; left: 18px; }
+.geo-label--tr { top: 14px; right: 18px; }
+.geo-label--bl { bottom: 14px; left: 18px; }
+
+/* ============================================
+   Layout
+   ============================================ */
+
+.archipelago {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4rem;
+}
+
+/* ============================================
+   Islands — content sits on these
+   ============================================ */
+
+.isle-block {
+  position: relative;
+  background: var(--parchment);
+  padding: 2rem 2.1rem 1.6rem;
+  margin: 2.75rem auto;
+  max-width: var(--maxw);
+  box-shadow:
+    0 0 0 4px var(--gold),
+    0 0 0 5px var(--oxblood),
+    0 22px 34px -14px var(--isle-shadow);
+}
+
+.isle-block--1 { border-radius: 58px 42px 66px 38px / 46px 60px 40px 62px; }
+.isle-block--2 { border-radius: 40px 64px 44px 60px / 60px 42px 58px 44px; }
+.isle-block--3 { border-radius: 66px 40px 58px 44px / 42px 58px 46px 60px; }
+.isle-block--4 { border-radius: 44px 60px 40px 64px / 58px 44px 62px 40px; }
+
+.isle-block--right { margin-left: auto; margin-right: 6px; }
+.isle-block--left  { margin-left: 6px; margin-right: auto; }
+
+.isle-block .tab {
+  position: absolute;
+  top: -.65rem;
+  left: 1.6rem;
+  background: var(--oxblood);
+  color: var(--parchment);
+  font-family: "Cinzel", serif;
+  font-size: .65rem;
+  letter-spacing: .08em;
+  padding: .2rem .6rem;
+  border: 1px solid var(--gold);
+}
+
+.isle-block h3 { margin-top: 0; }
+.isle-block p:last-child { margin-bottom: 0; }
+
+.lede::first-letter {
+  font-family: "Mrs Saint Delafield", cursive;
+  font-size: 3.2rem;
+  color: var(--oxblood);
+  float: left;
+  line-height: .78;
+  margin: .1rem .15rem 0 0;
+}
+
+/* pinned dispatch note nested inside an island */
+.sub-card {
+  position: relative;
+  border: 1px solid var(--rule);
+  background: rgba(0,0,0,.03);
+  border-radius: 4px;
+  padding: 1.1rem 1.3rem 1rem;
+  margin: 1.3rem 0;
+}
+
+.sub-card .tab { left: 1rem; }
+
+/* ============================================
+   Home page — hero + navigational chart
+   ============================================ */
+
+.isle-block--hero { text-align: center; }
+.isle-block--hero .tagline {
+  font-style: italic;
+  color: var(--ink-soft);
+  max-width: none;
+  font-size: 1.02rem;
+}
+
+.map-wrap {
+  position: relative;
+  z-index: 1;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 0 1rem;
+}
+
+.map-wrap svg { width: 100%; height: auto; display: block; max-width: 920px; margin: 0 auto; }
+
+.isle-link { cursor: pointer; }
+.isle-link .isle-shape { transition: fill .2s ease; fill: var(--parchment-deep); stroke: var(--ink-soft); stroke-width: 2; }
+.isle-link:hover .isle-shape, .isle-link:focus-visible .isle-shape { fill: var(--gold); }
+.isle-link .isle-icon { transition: transform .2s ease; transform-origin: center; }
+.isle-link:hover .isle-icon, .isle-link:focus-visible .isle-icon { transform: translateY(-5px); }
+.isle-link .isle-label { font-family: "Cinzel", serif; font-weight: 600; font-size: 15px; letter-spacing: .06em; fill: var(--ink); transition: fill .2s ease; }
+.isle-link:hover .isle-label, .isle-link:focus-visible .isle-label { fill: var(--oxblood); }
+.isle-link:focus-visible { outline: none; }
+
+.route-line { fill: none; stroke: var(--oxblood); stroke-width: 2; stroke-dasharray: 2 7; stroke-linecap: round; }
+
+.compass text { font-family: "Cinzel", serif; font-weight: 600; fill: var(--ink-soft); }
+.compass .needle { fill: var(--oxblood); }
+.compass circle, .compass line { stroke: var(--gold); }
+
+.map-hint {
+  text-align: center;
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: .95rem;
+  margin: 1.5rem 0 0;
+  text-shadow: 0 1px 3px rgba(0,0,0,.25);
+}
+
+.key-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .4rem 1.2rem;
+  margin: 1rem 0 0;
+}
+
+.key-list dt {
+  font-family: "Cinzel", serif;
+  font-size: .68rem;
+  letter-spacing: .08em;
+  color: var(--gold);
+  align-self: baseline;
+  padding-top: .1rem;
+}
+
+.key-list dd { margin: 0; }
+
+.footer-note {
+  text-align: center;
+  font-size: .82rem;
+  color: var(--ink-soft);
+  margin: 2.5rem 0 0;
+  text-shadow: 0 1px 3px rgba(0,0,0,.25);
+}
+
+.lamp-toggle {
+  display: block;
+  margin: 1rem auto 0;
+  background: none;
+  border: 1px solid var(--rule);
+  color: var(--ink-soft);
+  font-family: "EB Garamond", serif;
+  font-style: italic;
+  font-size: .85rem;
+  padding: .3rem .8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.lamp-toggle:hover { border-color: var(--gold); color: var(--ink); }
+
+/* ============================================
+   Return-to-map compass (subpages)
+   ============================================ */
+
+.return-compass {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--parchment);
+  box-shadow:
+    0 0 0 3px var(--gold),
+    0 0 0 4px var(--oxblood),
+    0 10px 20px -8px rgba(0,0,0,.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.return-compass svg { width: 32px; height: 32px; }
+.return-compass:hover { box-shadow: 0 0 0 3px var(--gold-bright), 0 0 0 4px var(--oxblood), 0 10px 20px -8px rgba(0,0,0,.45); }
+
+/* ============================================
+   Timeline (ship's log)
+   ============================================ */
+
+.timeline { margin: 1.5rem 0 0; max-width: var(--maxw); }
+
+.timeline-item {
+  position: relative;
+  padding-left: 1.4rem;
+  border-left: 2px dashed var(--oxblood-soft);
+  padding-bottom: 1.75rem;
+}
+
+.timeline-item:last-child { padding-bottom: 0; }
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: .3rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 1px solid var(--oxblood);
+}
+
+.timeline-year {
+  display: block;
+  font-family: "Cinzel", serif;
+  color: var(--oxblood);
+  font-size: .78rem;
+  letter-spacing: .06em;
+  margin-bottom: .15rem;
+}
+
+/* ============================================
+   Tags
+   ============================================ */
+
+.tag {
+  display: inline-block;
+  font-family: "Cinzel", serif;
+  font-size: .68rem;
+  letter-spacing: .05em;
+  padding: .25rem .6rem;
+  border: 1px solid var(--oxblood);
+  color: var(--oxblood-soft);
+  margin: .15rem .35rem .15rem 0;
+}
+
+.tag-row { margin: .9rem 0 0; max-width: var(--maxw); }
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 640px) {
+  body { font-size: 17px; }
+  h1 { font-size: 2.3rem; }
+  .archipelago { padding: 2.25rem 1rem 3rem; }
+  .isle-block { padding: 1.6rem 1.5rem 1.3rem; margin: 2rem auto; }
+  .isle-block--right, .isle-block--left { margin-left: auto; margin-right: auto; }
+  .key-list { grid-template-columns: 1fr; gap: .1rem 0; }
+  .key-list dt { margin-top: .5rem; }
+  .geo-label { font-size: .58rem; }
+  .return-compass { width: 50px; height: 50px; top: 12px; left: 12px; }
+  .return-compass svg { width: 26px; height: 26px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
