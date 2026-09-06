@@ -3,83 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>[Your Name] — Home</title>
+<title>[Your Name] — An Atlas</title>
 <meta name="description" content="Personal site of [Your Name], incoming first-year at UC Berkeley.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=EB+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <script>
-  // Apply saved theme before paint to avoid a flash of the wrong theme
   (function(){var t=localStorage.getItem('site-theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}})();
 </script>
 </head>
 <body>
-<div class="shell">
+<div class="page-frame">
 
-  <aside class="sidebar">
-    <div class="mark">[Your Name]</div>
-    <p class="tagline">Incoming first-year, UC Berkeley</p>
-    <nav class="primary-nav" aria-label="Primary">
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="college.html">College</a></li>
-        <li><a href="hobbies.html">Hobbies &amp; Writing</a></li>
-      </ul>
-    </nav>
-    <div class="sidebar-footer">
-      <button type="button" class="lamp-toggle" data-lamp-toggle>Turn the lamp off</button>
-    </div>
-  </aside>
+  <header class="atlas-header">
+    <p class="small-caps-label">An Atlas, Kept By</p>
+    <h1>[Your Name]</h1>
+    <p class="tagline">Incoming first-year, University of California, Berkeley — a single room in Foothill.</p>
+  </header>
 
-  <main>
-    <div class="content">
-      <p class="eyebrow">Overview</p>
-      <h1>Hi — I'm [Your Name].</h1>
-      <p>
-        I'm an incoming first-year at UC Berkeley, starting this fall.
-        This little corner of the internet is where I'm keeping track of
-        what I'm up to: school, the things I collect, and some writing.
-        [Add a sentence or two here about who you are, where you're from,
-        or what you're into — this is the first thing people will read.]
-      </p>
+  <div class="map-wrap">
+    <svg viewBox="0 0 900 560" role="img" aria-labelledby="mapTitle mapDesc">
+      <title id="mapTitle">A map of this site</title>
+      <desc id="mapDesc">An illustrated map with two isles — College and Hobbies &amp; Writing — each linking to a page.</desc>
 
-      <dl class="facts-grid">
-        <div class="fact">
-          <dt>Studying at</dt>
-          <dd>UC Berkeley</dd>
-        </div>
-        <div class="fact">
-          <dt>Class of</dt>
-          <dd>[2030]</dd>
-        </div>
-        <div class="fact">
-          <dt>Living in</dt>
-          <dd>Foothill</dd>
-        </div>
-        <div class="fact">
-          <dt>Probably thinking about</dt>
-          <dd>[intended major]</dd>
-        </div>
-      </dl>
+      <!-- sea -->
+      <rect x="0" y="0" width="900" height="560" fill="var(--sea)"></rect>
+      <path d="M0,120 Q150,140 300,115 T600,125 T900,110" stroke="var(--sea-deep)" stroke-width="2" fill="none" opacity=".5"></path>
+      <path d="M0,430 Q180,455 360,428 T720,440 T900,420" stroke="var(--sea-deep)" stroke-width="2" fill="none" opacity=".5"></path>
 
-      <h2>A few things about me</h2>
-      <p>
-        I collect small, well-made things — fountain pens, watches,
-        cologne, tea, and the odd interesting object for my desk. I fence,
-        I'm into maps, and I run a long-running Dungeons &amp; Dragons
-        campaign. More on all of that on the
-        <a href="hobbies.html">hobbies page</a>.
-      </p>
+      <!-- route between isles -->
+      <path class="route-line" d="M345,255 Q450,180 560,300"></path>
 
-      <h2>Find me elsewhere</h2>
-      <p>
-        [Email] · [GitHub] · [Instagram, LinkedIn, or wherever else you'd
-        like people to find you — replace this line with real links.]
-      </p>
-    </div>
-  </main>
+      <!-- College isle -->
+      <a href="college.html" class="isle-link" aria-label="Go to the College page">
+        <path class="isle-shape" d="M150,260 C160,215 205,195 255,202 C305,190 345,215 348,252 C356,282 330,312 288,318 C248,326 198,320 172,300 C154,288 145,275 150,260 Z"></path>
+        <g class="isle-icon" transform="translate(250,238)">
+          <path d="M-22,10 L0,-14 L22,10 Z" fill="none" stroke="var(--oxblood)" stroke-width="2.5"></path>
+          <rect x="-14" y="10" width="28" height="18" fill="none" stroke="var(--oxblood)" stroke-width="2.5"></rect>
+          <line x1="0" y1="-14" x2="0" y2="-24" stroke="var(--oxblood)" stroke-width="2.5"></line>
+        </g>
+        <text class="isle-label" x="250" y="285" text-anchor="middle">College</text>
+      </a>
 
-</div>
-<script src="js/script.js"></script>
-</body>
-</html>
+      <!-- Hobbies & Writing isle -->
+      <a href="hobbies.html" class="isle-link" aria-label="Go to the Hobbies and Writing page">
+        <path class="isle-shape"
