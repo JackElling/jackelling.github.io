@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jack Elling</title>
+<meta name="description" content="Jack Elling — Computer Science, University of California, Berkeley.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Reusable SVG definitions: hachure patterns, filters, gradients -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="paperGrain" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="noise"/>
+      <feColorMatrix in="noise" type="matrix"
+        values="0 0 0 0 0.16
+                0 0 0 0 0.11
+                0 0 0 0 0.07
+                0 0 0 0.05 0"/>
+    </filter>
+    <radialGradient id="waterGrad" cx="50%" cy="35%" r="85%">
+      <stop offset="0%" stop-color="#0a8098"/>
+      <stop offset="55%" stop-color="#00677C"/>
+      <stop offset="100%" stop-color="#003e49"/>
+    </radialGradient>
+    <linearGradient id="waveLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFF6E3" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FFF6E3" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#FFF6E3" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============================= HERO ============================= -->
+<header class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="grid-overlay grid-overlay--water" aria-hidden="true"></div>
+
+  <p class="coord coord--nw" aria-hidden="true">37&deg;52&prime; N</p>
+  <p class="coord coord--se" aria-hidden="true">122&deg;16&prime; W</p>
+
+  <nav class="site-nav" aria-label="Primary">
+    <a class="monogram" href="#top" aria-label="Jack Elling, home">J&middot;E</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Territories</a></li>
+      <li><a href="#instruments">Instruments</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-stage">
+    <div class="compass-rose" aria-hidden="true">
+      <svg viewBox="0 0 220 220" class="compass-svg">
+        <g class="compass-needle">
+          <circle cx="110" cy="110" r="98" class="c-ring c-ring--outer"/>
+          <circle cx="110" cy="110" r="78" class="c-ring"/>
+          <g class="c-ticks">
+            <!-- 32 rim ticks -->
+            <g id="tickGroup"></g>
+          </g>
+          <!-- Long points N E S W -->
+          <g class="c-points">
+            <path class="c-point c-point--long" d="M110,14 L118,110 L110,96 L102,110 Z"/>
+            <path class="c-point c-point--long" d="M110,14 L118,110 L110,96 L102,110 Z" transform="rotate(90 110 110)"/>
+            <path class="c-point c-point--long" d="M110,14 L118,110 L110,96 L102,110 Z" transform="rotate(180 110 110)"/>
+            <path class="c-point c-point--long" d="M110,14 L118,110 L110,96 L102,110 Z" transform="rotate(270 110 110)"/>
+            <!-- Short diagonal points -->
+            <path class="c-point c-point--short" d="M110,40 L114,110 L110,102 L106,110 Z" transform="rotate(45 110 110)"/>
+            <path class="c-point c-point--short" d="M110,40 L114,110 L110,102 L106,110 Z" transform="rotate(135 110 110)"/>
+            <path class="c-point c-point--short" d="M110,40 L114,110 L110,102 L106,110 Z" transform="rotate(225 110 110)"/>
+            <path class="c-point c-point--short" d="M110,40 L114,110 L110,102 L106,110 Z" transform="rotate(315 110 110)"/>
+          </g>
+          <circle cx="110" cy="110" r="6" class="c-hub"/>
+        </g>
+        <text x="110" y="34" class="c-label" text-anchor="middle">N</text>
+        <text x="188" y="115" class="c-label" text-anchor="middle">E</text>
+        <text x="110" y="200" class="c-label" text-anchor="middle">S</text>
+        <text x="32" y="115" class="c-label" text-anchor="middle">W</text>
+      </svg>
+    </div>
+
+    <div class="cartouche">
+      <p class="cartouche-eyebrow">A New &amp; Accurate Chart of</p>
+      <h1 class="cartouche-name">Jack&nbsp;Elling</h1>
+      <div class="cartouche-rule" aria-hidden="true">
+        <svg viewBox="0 0 300 14" preserveAspectRatio="none"><path d="M0,7 C60,1 90,13 150,7 C210,1 240,13 300,7" /></svg>
+      </div>
+      <p class="cartouche-tagline">Computer Science &mdash; University of California, Berkeley</p>
+      <p class="cartouche-sub">Incoming, Class of 2030</p>
+    </div>
+  </div>
+
+  <button class="scroll-hint" type="button" aria-label="Scroll to about section" data-scroll-to="#about">
+    <svg viewBox="0 0 40 60" aria-hidden="true">
+      <path d="M20,2 L20,50" stroke-dasharray="3 4"/>
+      <path d="M10,42 L20,54 L30,42"/>
+    </svg>
+  </button>
+
+  <svg class="hero-waves" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,40 C240,80 480,0 720,30 C960,60 1200,10 1440,45 L1440,90 L0,90 Z" class="wave wave--back"/>
+    <path d="M0,55 C220,20 460,80 720,50 C980,20 1220,70 1440,50 L1440,90 L0,90 Z" class="wave wave--front"/>
+  </svg>
+</header>
+
+<!-- ============================= MAIN ============================= -->
+<main id="main">
+
+  <section id="about" class="section about">
+    <div class="plate-label"><span>Surveyor&rsquo;s Notes</span></div>
+
+    <div class="about-grid">
+      <div class="about-figure" aria-hidden="true">
+        <svg viewBox="0 0 220 220" class="figure-svg">
+          <ellipse cx="110" cy="205" rx="72" ry="10" class="seal-shadow"/>
+          <path class="seal-shape" d="M200,110 L196.6,60 L155,32.1 L110,10 L65,32.1 L23.4,60 L20,110 L23.4,160 L65,187.9 L110,210 L155,187.9 L196.6,160 Z"/>
+          <circle cx="110" cy="110" r="60" class="seal-ring"/>
+          <text x="110" y="104" class="seal-text" text-anchor="middle">J&#8202;&middot;&#8202;E</text>
+          <line x1="80" y1="118" x2="140" y2="118" class="seal-rule"/>
+          <text x="110" y="141" class="seal-sub" text-anchor="middle">EST. 2026</text>
+        </svg>
+      </div>
+
+      <div class="about-text">
+        <p>I&rsquo;m an incoming first-year at UC&nbsp;Berkeley, about to start charting a course through computer science. Most days you&rsquo;ll find me sketching out small tools and side projects, arguing with a compiler, or trying to make something run a little faster than it has any right to.</p>
+        <p>Off the screen, I fence, run a long-running D&amp;D campaign for a five-person party, and keep a small collection of pens, watches, and loose-leaf tea &mdash; the sort of hobbies that reward patience and a good eye for detail, which turns out to help with debugging too.</p>
+        <p class="about-signoff">Currently docked in Berkeley, CA.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider terrain" aria-hidden="true">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="terrain-svg">
+      <!-- ridge silhouette -->
+      <path class="ridge" d="M0,100 L70,58 L120,84 L190,30 L240,70 L300,46 L360,86 L430,20 L480,64 L540,40 L610,90 L680,54 L740,78 L810,34 L870,66 L940,42 L1000,88 L1060,60 L1120,80 L1200,55 L1200,120 L0,120 Z"/>
+      <!-- hachure strokes: short parallel lines suggesting slope, clustered under each peak -->
+      <g class="hachures">
+        <line x1="60" y1="66" x2="52" y2="80"/><line x1="72" y1="70" x2="66" y2="86"/><line x1="84" y1="75" x2="80" y2="92"/>
+        <line x1="180" y1="40" x2="168" y2="58"/><line x1="192" y1="46" x2="182" y2="66"/><line x1="204" y1="53" x2="196" y2="74"/><line x1="216" y1="60" x2="210" y2="82"/>
+        <line x1="420" y1="30" x2="406" y2="52"/><line x1="432" y1="36" x2="420" y2="60"/><line x1="444" y1="44" x2="434" y2="68"/><line x1="456" y1="52" x2="448" y2="76"/>
+        <line x1="800" y1="44" x2="788" y2="64"/><line x1="812" y1="50" x2="802" y2="72"/><line x1="824" y1="58" x2="816" y2="80"/>
+        <line x1="990" y1="60" x2="978" y2="76"/><line x1="1002" y1="66" x2="992" y2="84"/><line x1="1014" y1="72" x2="1006" y2="90"/>
+      </g>
+    </svg>
+  </div>
+
+  <section id="work" class="section work">
+    <div class="plate-label"><span>Charted Territories</span></div>
+    <p class="section-intro">A few expeditions worth showing on the map. <!-- Replace these four cards with your real repositories. --></p>
+
+    <div class="territory-grid">
+
+      <article class="territory-card">
+        <svg class="territory-glyph" viewBox="0 0 60 60" aria-hidden="true"><path class="glyph-ink" d="M2,50 L18,20 L26,34 L36,10 L58,50 Z"/><line x1="12" y1="38" x2="8" y2="46"/><line x1="20" y1="30" x2="16" y2="40"/></svg>
+        <h3>Pathfinder</h3>
+        <p class="territory-desc">A browser-based A* and Dijkstra pathfinding visualizer &mdash; draw walls, drop weights, and watch the search unfold cell by cell.</p>
+        <p class="territory-stack">Vanilla JS &middot; Canvas &middot; HTML/CSS</p>
+        <a class="territory-link" href="#" aria-label="View Pathfinder on GitHub">View on GitHub</a>
+      </article>
+
+      <article class="territory-card">
+        <svg class="territory-glyph" viewBox="0 0 60 60" aria-hidden="true"><circle class="glyph-ink" cx="30" cy="30" r="14" fill="none"/><path class="glyph-ink" d="M30,20 L30,16 M30,44 L30,40 M20,30 L16,30 M44,30 L40,30" /></svg>
+        <h3>Tabletop Ledger</h3>
+        <p class="territory-desc">A lightweight campaign tracker for tabletop RPGs &mdash; characters, initiative order, and session notes in one place.</p>
+        <p class="territory-stack">React &middot; Node.js &middot; SQLite</p>
+        <a class="territory-link" href="#" aria-label="View Tabletop Ledger on GitHub">View on GitHub</a>
+      </article>
+
+      <article class="territory-card">
+        <svg class="territory-glyph" viewBox="0 0 60 60" aria-hidden="true"><path class="glyph-ink" d="M6,48 C16,20 22,44 30,26 C38,10 44,40 54,48 Z"/></svg>
+        <h3>Inkwell</h3>
+        <p class="territory-desc">A distraction-free, keyboard-first note editor with local-first storage and a typewriter scroll mode.</p>
+        <p class="territory-stack">TypeScript &middot; IndexedDB</p>
+        <a class="territory-link" href="#" aria-label="View Inkwell on GitHub">View on GitHub</a>
+      </article>
+
+      <article class="territory-card">
+        <svg class="territory-glyph" viewBox="0 0 60 60" aria-hidden="true"><ellipse class="glyph-ink" cx="30" cy="34" rx="22" ry="10" fill="none"/><path class="glyph-ink" d="M30,24 L30,8 M30,8 L38,12" fill="none"/></svg>
+        <h3>Campus Compass</h3>
+        <p class="territory-desc">A real-time tracker for the Berkeley campus shuttle routes, built to shave a few minutes off the walk to lecture.</p>
+        <p class="territory-stack">Python &middot; Flask &middot; REST API</p>
+        <a class="territory-link" href="#" aria-label="View Campus Compass on GitHub">View on GitHub</a>
+      </article>
+
+    </div>
+  </section>
+
+  <div class="divider compass-divider" aria-hidden="true">
+    <svg viewBox="0 0 200 24" preserveAspectRatio="xMidYMid meet">
+      <line x1="0" y1="12" x2="80" y2="12"/>
+      <path d="M100,2 L108,12 L100,22 L92,12 Z"/>
+      <line x1="120" y1="12" x2="200" y2="12"/>
+    </svg>
+  </div>
+
+  <section id="instruments" class="section instruments">
+    <div class="plate-label"><span>Ship&rsquo;s Instruments</span></div>
+
+    <div class="legend-box">
+      <p class="legend-heading">Legend</p>
+      <dl class="legend-list">
+        <div class="legend-row">
+          <dt><svg viewBox="0 0 24 24" class="legend-icon" aria-hidden="true"><path d="M12,3 L12,21 M6,7 L18,7 M6,17 L18,17"/></svg></dt>
+          <dd><span class="legend-term">Languages</span> Python, Java, C, JavaScript, HTML/CSS</dd>
+        </div>
+        <div class="legend-row">
+          <dt><svg viewBox="0 0 24 24" class="legend-icon" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none"/><path d="M12,4 L12,20 M4,12 L20,12"/></svg></dt>
+          <dd><span class="legend-term">Frameworks &amp; Libraries</span> React, Node.js, Flask</dd>
+        </div>
+        <div class="legend-row">
+          <dt><svg viewBox="0 0 24 24" class="legend-icon" aria-hidden="true"><path d="M4,20 L11,4 L18,20 M7,13 L15,13"/></svg></dt>
+          <dd><span class="legend-term">Tools</span> Git, Linux, Figma, VS&nbsp;Code</dd>
+        </div>
+        <div class="legend-row">
+          <dt><svg viewBox="0 0 24 24" class="legend-icon" aria-hidden="true"><path d="M12,2 L14,10 L22,10 L15,15 L18,22 L12,17 L6,22 L9,15 L2,10 L10,10 Z"/></svg></dt>
+          <dd><span class="legend-term">Currently charting</span> Data structures, systems fundamentals, and a proper Ravenloft campaign map</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="site-footer" id="contact">
+  <div class="grid-overlay grid-overlay--water" aria-hidden="true"></div>
+
+  <svg class="footer-waves" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,30 C240,0 480,55 720,25 C960,0 1200,50 1440,20 L1440,0 L0,0 Z" class="wave wave--front"/>
+  </svg>
+
+  <div class="footer-content">
+    <div class="compass-rose compass-rose--small" aria-hidden="true">
+      <svg viewBox="0 0 120 120" class="compass-svg-small">
+        <circle cx="60" cy="60" r="52" class="c-ring c-ring--outer"/>
+        <path d="M60,10 L64,60 L60,52 L56,60 Z"/>
+        <path d="M60,10 L64,60 L60,52 L56,60 Z" transform="rotate(90 60 60)"/>
+        <path d="M60,10 L64,60 L60,52 L56,60 Z" transform="rotate(180 60 60)"/>
+        <path d="M60,10 L64,60 L60,52 L56,60 Z" transform="rotate(270 60 60)"/>
+        <circle cx="60" cy="60" r="4" class="c-hub"/>
+      </svg>
+    </div>
+
+    <h2 class="footer-heading">Send Word</h2>
+    <p class="footer-blurb">Whether it&rsquo;s a project, an opportunity, or just a good book recommendation &mdash; a message will reach me.</p>
+
+    <ul class="footer-links">
+      <li><a href="mailto:jelling@berkeley.edu">Email</a></li>
+      <li><a href="https://github.com/jackelling">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+    </ul>
+
+    <div class="scale-bar" aria-hidden="true">
+      <svg viewBox="0 0 260 30">
+        <line x1="0" y1="10" x2="240" y2="10"/>
+        <rect x="0" y="6" width="30" height="8" class="scale-fill"/>
+        <rect x="60" y="6" width="30" height="8" class="scale-fill"/>
+        <rect x="120" y="6" width="30" height="8" class="scale-fill"/>
+        <rect x="180" y="6" width="30" height="8" class="scale-fill"/>
+        <line x1="0" y1="6" x2="0" y2="16"/><line x1="60" y1="6" x2="60" y2="16"/>
+        <line x1="120" y1="6" x2="120" y2="16"/><line x1="180" y1="6" x2="180" y2="16"/><line x1="240" y1="6" x2="240" y2="16"/>
+        <text x="0" y="27">0</text><text x="113" y="27">50</text><text x="216" y="27">100&#8202;NM</text>
+      </svg>
+    </div>
+
+    <p class="signature">Charted by <span class="script">Jack Elling</span>, 2026</p>
+  </div>
+</footer>
+
+<canvas id="dust-canvas" aria-hidden="true"></canvas>
+<script src="script.js"></script>
+</body>
+</html>
