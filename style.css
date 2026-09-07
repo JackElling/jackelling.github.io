@@ -1,0 +1,492 @@
+/* ============================================
+   Personal site — antique atlas / archipelago theme
+   ============================================ */
+
+:root {
+  --parchment: #e4d5ac;
+  --parchment-deep: #d3bd85;
+  --ink: #2b2013;
+  --ink-soft: #5c4d38;
+  --oxblood: #950000;
+  --oxblood-soft: #7a1f1f;
+  --gold: #a8791a;
+  --gold-bright: #c9971f;
+  --sea: #3e5c54;
+  --sea-deep: #23362f;
+  --rule: #a9895a;
+  --isle-shadow: rgba(0,0,0,.4);
+  --maxw: 620px;
+
+  --island-bg-1: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20140'%3E%3Cfilter%20id='r1'%20x='-30%25'%20y='-30%25'%20width='160%25'%20height='160%25'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.028%200.04'%20numOctaves='2'%20seed='3'%20result='n'/%3E%3CfeDisplacementMap%20in='SourceGraphic'%20in2='n'%20scale='12'/%3E%3C/filter%3E%3Cg%20filter='url(%23r1)'%3E%3Crect%20x='2'%20y='2'%20width='196'%20height='136'%20rx='30'%20fill='%23a8791a'/%3E%3Crect%20x='14'%20y='12'%20width='172'%20height='116'%20rx='26'%20fill='%23950000'/%3E%3Crect%20x='30'%20y='26'%20width='140'%20height='88'%20rx='20'%20fill='%23e4d5ac'/%3E%3C/g%3E%3C/svg%3E");
+  --island-bg-2: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20140'%3E%3Cfilter%20id='r2'%20x='-30%25'%20y='-30%25'%20width='160%25'%20height='160%25'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.035%200.03'%20numOctaves='2'%20seed='9'%20result='n'/%3E%3CfeDisplacementMap%20in='SourceGraphic'%20in2='n'%20scale='14'/%3E%3C/filter%3E%3Cg%20filter='url(%23r2)'%3E%3Crect%20x='2'%20y='2'%20width='196'%20height='136'%20rx='30'%20fill='%23a8791a'/%3E%3Crect%20x='14'%20y='12'%20width='172'%20height='116'%20rx='26'%20fill='%23950000'/%3E%3Crect%20x='30'%20y='26'%20width='140'%20height='88'%20rx='20'%20fill='%23e4d5ac'/%3E%3C/g%3E%3C/svg%3E");
+  --island-bg-3: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20140'%3E%3Cfilter%20id='r3'%20x='-30%25'%20y='-30%25'%20width='160%25'%20height='160%25'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.03%200.045'%20numOctaves='2'%20seed='15'%20result='n'/%3E%3CfeDisplacementMap%20in='SourceGraphic'%20in2='n'%20scale='11'/%3E%3C/filter%3E%3Cg%20filter='url(%23r3)'%3E%3Crect%20x='2'%20y='2'%20width='196'%20height='136'%20rx='30'%20fill='%23a8791a'/%3E%3Crect%20x='14'%20y='12'%20width='172'%20height='116'%20rx='26'%20fill='%23950000'/%3E%3Crect%20x='30'%20y='26'%20width='140'%20height='88'%20rx='20'%20fill='%23e4d5ac'/%3E%3C/g%3E%3C/svg%3E");
+  --island-bg-4: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20140'%3E%3Cfilter%20id='r4'%20x='-30%25'%20y='-30%25'%20width='160%25'%20height='160%25'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.04%200.032'%20numOctaves='2'%20seed='21'%20result='n'/%3E%3CfeDisplacementMap%20in='SourceGraphic'%20in2='n'%20scale='13'/%3E%3C/filter%3E%3Cg%20filter='url(%23r4)'%3E%3Crect%20x='2'%20y='2'%20width='196'%20height='136'%20rx='30'%20fill='%23a8791a'/%3E%3Crect%20x='14'%20y='12'%20width='172'%20height='116'%20rx='26'%20fill='%23950000'/%3E%3Crect%20x='30'%20y='26'%20width='140'%20height='88'%20rx='20'%20fill='%23e4d5ac'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+html[data-theme="dark"] {
+  --parchment: #1c1712;
+  --parchment-deep: #140f0b;
+  --ink: #ecdfc0;
+  --ink-soft: #b8a67f;
+  --oxblood: #c23b3b;
+  --oxblood-soft: #e0605f;
+  --gold: #d4af37;
+  --gold-bright: #e8c766;
+  --sea: #1c2f2a;
+  --sea-deep: #0f1c18;
+  --rule: #5c4d38;
+  --isle-shadow: rgba(0,0,0,.6);
+
+  --island-bg-1: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20140'%3E%3Cfilter%20id='d1'%20x='-30%25'%20y='-30%25'%20width='160%25'%20height='160%25'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.028%200.04'%20numOctaves='2'%20seed='3'%20result='n'/%3E%3CfeDisplacementMap%20in='SourceGraphic'%20in2='n'%20scale='12'/%3E%3C/filter%3E%3Cg%20filter='url(%23d1)'%3E%3Crect%20x='2'%20y='2'%20width='196'%20height='136'%20rx='30'%20fill='%23d4af37'/%3E%3Crect%20x='14'%20y='12'%20width='172'%20height='116'%20rx='26'%20fill='%23c23b3b'/%3E%3Crect%20x='30'%20y='26'%20width='140'%20height='88'%20rx='20'%20fill='%231c1712'/%3E%3C/g%3E%3C/svg%3E");
+  --island-bg-2: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20140'%3E%3Cfilter%20id='d2'%20x='-30%25'%20y='-30%25'%20width='160%25'%20height='160%25'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.035%200.03'%20numOctaves='2'%20seed='9'%20result='n'/%3E%3CfeDisplacementMap%20in='SourceGraphic'%20in2='n'%20scale='14'/%3E%3C/filter%3E%3Cg%20filter='url(%23d2)'%3E%3Crect%20x='2'%20y='2'%20width='196'%20height='136'%20rx='30'%20fill='%23d4af37'/%3E%3Crect%20x='14'%20y='12'%20width='172'%20height='116'%20rx='26'%20fill='%23c23b3b'/%3E%3Crect%20x='30'%20y='26'%20width='140'%20height='88'%20rx='20'%20fill='%231c1712'/%3E%3C/g%3E%3C/svg%3E");
+  --island-bg-3: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20140'%3E%3Cfilter%20id='d3'%20x='-30%25'%20y='-30%25'%20width='160%25'%20height='160%25'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.03%200.045'%20numOctaves='2'%20seed='15'%20result='n'/%3E%3CfeDisplacementMap%20in='SourceGraphic'%20in2='n'%20scale='11'/%3E%3C/filter%3E%3Cg%20filter='url(%23d3)'%3E%3Crect%20x='2'%20y='2'%20width='196'%20height='136'%20rx='30'%20fill='%23d4af37'/%3E%3Crect%20x='14'%20y='12'%20width='172'%20height='116'%20rx='26'%20fill='%23c23b3b'/%3E%3Crect%20x='30'%20y='26'%20width='140'%20height='88'%20rx='20'%20fill='%231c1712'/%3E%3C/g%3E%3C/svg%3E");
+  --island-bg-4: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20140'%3E%3Cfilter%20id='d4'%20x='-30%25'%20y='-30%25'%20width='160%25'%20height='160%25'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.04%200.032'%20numOctaves='2'%20seed='21'%20result='n'/%3E%3CfeDisplacementMap%20in='SourceGraphic'%20in2='n'%20scale='13'/%3E%3C/filter%3E%3Cg%20filter='url(%23d4)'%3E%3Crect%20x='2'%20y='2'%20width='196'%20height='136'%20rx='30'%20fill='%23d4af37'/%3E%3Crect%20x='14'%20y='12'%20width='172'%20height='116'%20rx='26'%20fill='%23c23b3b'/%3E%3Crect%20x='30'%20y='26'%20width='140'%20height='88'%20rx='20'%20fill='%231c1712'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  cursor: default;
+  background: var(--sea-deep);
+  color: var(--ink);
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 19px;
+  line-height: 1.6;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+h1, h2 {
+  font-family: "Mrs Saint Delafield", cursive;
+  font-weight: 400;
+  color: var(--oxblood);
+  margin: 0 0 .25rem;
+  line-height: 1.15;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 1.9rem; margin-top: 1.5rem; }
+
+h3 {
+  font-family: "EB Garamond", Georgia, serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--ink);
+  margin: 0 0 .4rem;
+}
+
+p { margin: 0 0 1.1rem; max-width: var(--maxw); }
+
+a { color: var(--oxblood-soft); }
+a:hover { color: var(--gold-bright); }
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 2px;
+}
+
+.small-caps-label {
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  font-size: .72rem;
+  letter-spacing: .12em;
+  color: var(--gold);
+}
+
+/* ============================================
+   Ocean scene — fixed backdrop + cursor-warped grid
+   ============================================ */
+
+.ocean-scene {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 0%, var(--sea), var(--sea-deep) 85%);
+}
+
+.ocean-layer {
+  position: absolute;
+  left: -15%;
+  width: 130%;
+  will-change: transform;
+}
+
+.ocean-layer--waves-1 {
+  top: 8%;
+  height: 60px;
+  opacity: .5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='60' viewBox='0 0 400 60'%3E%3Cpath d='M0,30 Q100,8 200,30 T400,30' stroke='%23ffffff' stroke-opacity='0.5' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 400px 60px;
+}
+
+.ocean-layer--waves-2 {
+  top: 34%;
+  height: 90px;
+  opacity: .35;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='90' viewBox='0 0 560 90'%3E%3Cpath d='M0,45 Q140,15 280,45 T560,45' stroke='%23ffffff' stroke-opacity='0.5' stroke-width='2.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 560px 90px;
+}
+
+.ocean-layer--waves-3 {
+  top: 64%;
+  height: 120px;
+  opacity: .25;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='120' viewBox='0 0 700 120'%3E%3Cpath d='M0,60 Q175,20 350,60 T700,60' stroke='%23ffffff' stroke-opacity='0.5' stroke-width='3' fill='none'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 700px 120px;
+}
+
+.graticule-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.graticule-line {
+  fill: none;
+  stroke: rgba(201,151,31,.28);
+  stroke-width: 1;
+}
+
+.geo-label {
+  position: absolute;
+  font-family: "Cinzel", serif;
+  font-size: .68rem;
+  letter-spacing: .1em;
+  color: rgba(201,151,31,.55);
+  white-space: nowrap;
+}
+
+.geo-label--tl { top: 14px; left: 18px; }
+.geo-label--tr { top: 14px; right: 18px; }
+.geo-label--bl { bottom: 14px; left: 18px; }
+
+/* ============================================
+   Layout
+   ============================================ */
+
+.archipelago {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4rem;
+}
+
+/* ============================================
+   Islands — organic, noise-displaced coastlines.
+   Background image supplies the gold/oxblood/parchment
+   rings; padding just needs to stay well inside them.
+   ============================================ */
+
+.isle-block {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 2.3rem 2.6rem 1.9rem;
+  margin: 3rem auto;
+  max-width: var(--maxw);
+  filter: drop-shadow(0 20px 26px var(--isle-shadow));
+}
+
+.isle-block--1 { background-image: var(--island-bg-1); }
+.isle-block--2 { background-image: var(--island-bg-2); }
+.isle-block--3 { background-image: var(--island-bg-3); }
+.isle-block--4 { background-image: var(--island-bg-4); }
+
+.isle-block--right { margin-left: auto; margin-right: 6px; }
+.isle-block--left  { margin-left: 6px; margin-right: auto; }
+
+.isle-block .tab {
+  position: absolute;
+  top: -.65rem;
+  left: 2rem;
+  background: var(--oxblood);
+  color: var(--parchment);
+  font-family: "Cinzel", serif;
+  font-size: .65rem;
+  letter-spacing: .08em;
+  padding: .2rem .6rem;
+  border: 1px solid var(--gold);
+}
+
+.isle-block h3 { margin-top: 0; }
+.isle-block p:last-child { margin-bottom: 0; }
+
+.lede::first-letter {
+  font-family: "Mrs Saint Delafield", cursive;
+  font-size: 3.2rem;
+  color: var(--oxblood);
+  float: left;
+  line-height: .78;
+  margin: .1rem .15rem 0 0;
+}
+
+/* pinned dispatch note nested inside an island */
+.sub-card {
+  position: relative;
+  border: 1px solid var(--rule);
+  background: rgba(0,0,0,.05);
+  border-radius: 4px;
+  padding: 1.1rem 1.3rem 1rem;
+  margin: 1.3rem 0;
+}
+
+.sub-card .tab { left: 1rem; }
+
+/* ============================================
+   Home page — the archipelago cluster
+   ============================================ */
+
+.atlas-cluster {
+  position: relative;
+  max-width: 880px;
+  margin: 0 auto;
+  min-height: 640px;
+}
+
+.isle--home {
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(480px, 88%);
+  text-align: center;
+  z-index: 2;
+}
+
+.isle--home .tagline {
+  font-style: italic;
+  color: var(--ink-soft);
+  max-width: none;
+  font-size: 1.02rem;
+}
+
+.isle--nav {
+  position: absolute;
+  width: min(230px, 44%);
+  text-align: center;
+  z-index: 2;
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform .2s ease;
+  cursor: pointer;
+}
+
+.isle--nav:hover, .isle--nav:focus-visible { transform: translateY(-8px); }
+
+.isle--nav .isle-icon-wrap {
+  display: block;
+  margin: 0 auto .3rem;
+  width: 34px;
+  height: 34px;
+}
+
+.isle--nav .isle-icon-wrap svg { width: 100%; height: 100%; }
+.isle--nav .isle-icon-wrap path,
+.isle--nav .isle-icon-wrap rect,
+.isle--nav .isle-icon-wrap line { stroke: var(--oxblood); }
+
+.isle--nav .isle-label-text {
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  font-size: .82rem;
+  letter-spacing: .05em;
+  transition: color .2s ease;
+}
+
+.isle--nav:hover .isle-label-text,
+.isle--nav:focus-visible .isle-label-text { color: var(--oxblood); }
+
+.isle--college { top: 58%; left: 6%; }
+.isle--hobbies { top: 54%; left: 62%; }
+
+.route-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cluster-compass {
+  position: absolute;
+  top: 4%;
+  right: 2%;
+  width: 78px;
+  height: 78px;
+  z-index: 1;
+  opacity: .85;
+}
+
+.map-hint {
+  text-align: center;
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: .95rem;
+  margin: 1rem 0 0;
+  text-shadow: 0 1px 3px rgba(0,0,0,.25);
+}
+
+.key-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .4rem 1.2rem;
+  margin: 1rem 0 0;
+}
+
+.key-list dt {
+  font-family: "Cinzel", serif;
+  font-size: .68rem;
+  letter-spacing: .08em;
+  color: var(--gold);
+  align-self: baseline;
+  padding-top: .1rem;
+}
+
+.key-list dd { margin: 0; }
+
+.footer-note {
+  text-align: center;
+  font-size: .82rem;
+  color: var(--ink-soft);
+  margin: 2.5rem 0 0;
+  text-shadow: 0 1px 3px rgba(0,0,0,.25);
+}
+
+.lamp-toggle {
+  display: block;
+  margin: 1rem auto 0;
+  background: none;
+  border: 1px solid var(--rule);
+  color: var(--ink-soft);
+  font-family: "EB Garamond", serif;
+  font-style: italic;
+  font-size: .85rem;
+  padding: .3rem .8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.lamp-toggle:hover { border-color: var(--gold); color: var(--ink); }
+
+/* ============================================
+   Return-to-map compass (subpages)
+   ============================================ */
+
+.return-compass {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--parchment);
+  box-shadow:
+    0 0 0 3px var(--gold),
+    0 0 0 4px var(--oxblood),
+    0 10px 20px -8px rgba(0,0,0,.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.return-compass svg { width: 32px; height: 32px; }
+.return-compass:hover { box-shadow: 0 0 0 3px var(--gold-bright), 0 0 0 4px var(--oxblood), 0 10px 20px -8px rgba(0,0,0,.45); }
+
+/* ============================================
+   Timeline (ship's log)
+   ============================================ */
+
+.timeline { margin: 1.5rem 0 0; max-width: var(--maxw); }
+
+.timeline-item {
+  position: relative;
+  padding-left: 1.4rem;
+  border-left: 2px dashed var(--oxblood-soft);
+  padding-bottom: 1.75rem;
+}
+
+.timeline-item:last-child { padding-bottom: 0; }
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: .3rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 1px solid var(--oxblood);
+}
+
+.timeline-year {
+  display: block;
+  font-family: "Cinzel", serif;
+  color: var(--oxblood);
+  font-size: .78rem;
+  letter-spacing: .06em;
+  margin-bottom: .15rem;
+}
+
+/* ============================================
+   Tags
+   ============================================ */
+
+.tag {
+  display: inline-block;
+  font-family: "Cinzel", serif;
+  font-size: .68rem;
+  letter-spacing: .05em;
+  padding: .25rem .6rem;
+  border: 1px solid var(--oxblood);
+  color: var(--oxblood-soft);
+  margin: .15rem .35rem .15rem 0;
+}
+
+.tag-row { margin: .9rem 0 0; max-width: var(--maxw); }
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 760px) {
+  .atlas-cluster { min-height: auto; }
+  .isle--home, .isle--nav {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: var(--maxw);
+    margin: 0 auto 2.5rem;
+  }
+  .route-overlay, .cluster-compass { display: none; }
+}
+
+@media (max-width: 640px) {
+  body { font-size: 17px; }
+  h1 { font-size: 2.3rem; }
+  .archipelago { padding: 2.25rem 1rem 3rem; }
+  .isle-block { padding: 1.9rem 2rem 1.6rem; margin: 2.5rem auto; }
+  .isle-block--right, .isle-block--left { margin-left: auto; margin-right: auto; }
+  .key-list { grid-template-columns: 1fr; gap: .1rem 0; }
+  .key-list dt { margin-top: .5rem; }
+  .geo-label { font-size: .58rem; }
+  .return-compass { width: 50px; height: 50px; top: 12px; left: 12px; }
+  .return-compass svg { width: 26px; height: 26px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
